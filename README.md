@@ -8,3 +8,10 @@ Luego, a partir del IMC obtenido se pueden calcular si una persona tiene un peso
 Requisitos:
 - No es necesario generar una salida por terminal
 - Obligatorio realizar los pruebas unitarias
+
+Tabla
+
+![alt text](image.png)
+
+Información adicional:
+
