@@ -1,5 +1,8 @@
 package dev.arturo.models;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class CorporalMass {
     private Double kilograms;
     private Double height;
@@ -30,6 +33,18 @@ public class CorporalMass {
 
     public double imcCalc(){
 
-        return kilograms/ Math.pow(height, height);
+        Double calcImc= kilograms/ Math.pow(height, height);
+        BigDecimal bigDecimal = new BigDecimal(calcImc);
+
+        BigDecimal roundUp = bigDecimal.setScale(2, RoundingMode.HALF_UP);
+
+        return roundUp.doubleValue();
+    }
+
+    public static void main(String[] args) {
+    BigDecimal bigDecimal = new BigDecimal(4.846500);
+    BigDecimal rounUp = bigDecimal.setScale(2, RoundingMode.HALF_UP);
+
+    System.out.println(rounUp);
     }
 }

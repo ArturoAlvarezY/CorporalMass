@@ -14,8 +14,10 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-   CorporalMass corporalMass = new CorporalMass(88.2, 1.84);
+   CorporalMass corporalMass = new CorporalMass(88.8, 1.85 );
 
+        System.out.println(corporalMass.imcCalc());
+        
         if (corporalMass.imcCalc() < 16) {
         System.out.println("delgadez severa");
         }
