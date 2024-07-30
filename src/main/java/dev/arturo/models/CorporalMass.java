@@ -7,9 +7,6 @@ public class CorporalMass {
     private Double kilograms;
     private Double height;
 
-
-    
-
     public CorporalMass(Double kilograms, Double height) {
         this.kilograms = kilograms;
         this.height = height;
@@ -31,20 +28,31 @@ public class CorporalMass {
         this.height = height;
     }
 
-    public double imcCalc(){
-
-        Double calcImc= kilograms/ Math.pow(height, height);
-        BigDecimal bigDecimal = new BigDecimal(calcImc);
-
-        BigDecimal roundUp = bigDecimal.setScale(2, RoundingMode.HALF_UP);
-
-        return roundUp.doubleValue();
-    }
-
-    public static void main(String[] args) {
-    BigDecimal bigDecimal = new BigDecimal(4.846500);
-    BigDecimal rounUp = bigDecimal.setScale(2, RoundingMode.HALF_UP);
-
-    System.out.println(rounUp);
-    }
+    public String getCorporalStatus(){
+        Double corporalStatus = imcCalc();
+        if (corporalStatus < 16) {
+            return "delgadez severa";
+        } 
+        else if (corporalStatus >= 16 && corporalStatus < 17) {
+            return "delgadez moderada";
+        }
+         else if (corporalStatus >= 17 && corporalStatus < 18.5) {
+            return "delgadez leve";
+        }
+         else if (corporalStatus >= 18.5 && corporalStatus < 25) {
+            return "peso normal";
+        }
+         else if (corporalStatus >= 25 && corporalStatus < 30) {
+            return "sobrepeso";
+        }
+         else if (corporalStatus >= 30 && corporalStatus < 35) {
+            return "obesidad leve";
+        }
+         else if (corporalStatus >= 35 && corporalStatus < 40) {
+            return "obesidad moderada";
+        }
+         else {
+            return "obesidad severa";
+        }
+    }   
 }
