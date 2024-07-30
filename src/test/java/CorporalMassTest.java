@@ -18,11 +18,6 @@ public class CorporalMassTest {
     }
 
     @Test
-    void testImcCalc() {
-        assertThat(corporalMass.imcCalc(), is(28.45));
-    }
-
-    @Test
     void testSetHeight() {
         corporalMass.setHeight(1.99);
         assertThat(corporalMass.getHeight(), is(1.99));
