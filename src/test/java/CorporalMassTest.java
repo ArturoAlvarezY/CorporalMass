@@ -5,7 +5,7 @@ import dev.arturo.models.CorporalMass;
 
 public class CorporalMassTest {
 
-    CorporalMass corporalMass = new CorporalMass(88.8, 1.85);
+    CorporalMass corporalMass = new CorporalMass(88.0, 1.85);
 
     @Test
     void testGetHeight() {
